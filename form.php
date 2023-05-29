@@ -13,7 +13,7 @@ if (!empty($_POST)) {
 	$reg = "/^\w+[\w\s-]*$/";
 	$mailreg = "/^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$/";
 	$list_sup = array('inv','walk','fly');
-	if (empty(!preg_match($reg,$username)) {
+	if (!preg_match($reg,$name)) {
 		$errors[] = "Укажите Ваше имя! Это поле не должно быть пустым";
 	}
 	if (!preg_match($mailreg,$email)) {
@@ -34,7 +34,7 @@ if (!empty($_POST)) {
 			exit();
 	}
 }
-	if (empty(!preg_match($bioreg,$biography)) {
+	if (!preg_match($bioreg,$biography)) {
 		$errors[] = "Расскажите что-нибудь о себе! Это поле не должно быть пустым";
 	}
 } else {
