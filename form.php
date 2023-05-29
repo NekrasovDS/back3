@@ -2,25 +2,32 @@
 
 header('Content-Type: text/html; charset=UTF-8');
 if (!empty($_POST)) {
-	if (empty($_POST["username"])) {
+	$bioreg = "/^\s*\w+[\w\s\.,-]*$/";
+	$reg = "/^\w+[\w\s-]*$/";
+	$mailreg = "/^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$/";
+	$list_sup = array('inv','walk','fly');
+	if (empty(!preg_match($reg,$username)) {
 		$errors[] = "Укажите Ваше имя! Это поле не должно быть пустым";
 	}
-	if (empty($_POST["email"])) {
+	if (!preg_match($mailreg,$email)) {
 		$errors[] = "Введите Ваш e-mail! Это поле не должно быть пустым";
 	}
 	if (empty($_POST["year"])) {
 		$errors[] = "Выберите Ваш год рождения! Это поле не должно быть пустым";
 	}
-	if (!isset($_POST["gender"])) {
+	if ($gender !== 'male' && $gender !== 'female')) {
 		$errors[] = "Выберите пол! Это поле не должно быть пустым";
 	}
 	if (!isset($_POST["countlimbs"])) {
 		$errors[] = "Выберите кол-во конечностей! Это поле не должно быть пустым";
 	}
-	if (!isset($_POST["super-powers"])) {
-		$errors[] = "Выберите суперспособность! Это поле не должно быть пустым";
+	foreach($superpowers as $checking){
+	if(array_search($checking,$list_sup)=== false){
+			print_r('Неверный формат суперсил');
+			exit();
 	}
-	if (empty($_POST["biography"])) {
+}
+	if (empty(!preg_match($bioreg,$biography)) {
 		$errors[] = "Расскажите что-нибудь о себе! Это поле не должно быть пустым";
 	}
 } else {
