@@ -22,7 +22,7 @@ if (!empty($_POST)) {
 	if (empty($_POST["year"])) {
 		$errors[] = "Выберите Ваш год рождения! Это поле не должно быть пустым";
 	}
-	if ($gender !== 'male' && $gender !== 'female')) {
+	if ($gender !== 'male' && $gender !== 'female') {
 		$errors[] = "Выберите пол! Это поле не должно быть пустым";
 	}
 	if (!isset($_POST["countlimbs"])) {
