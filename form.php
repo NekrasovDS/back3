@@ -1,12 +1,19 @@
 <?php
 
 header('Content-Type: text/html; charset=UTF-8');
+$username = htmlspecialchars($_POST["username"]);
+$email = htmlspecialchars($_POST["email"]);
+$year = intval(htmlspecialchars($_POST["year"]));
+$gender = htmlspecialchars($_POST["gender"]);
+$countlimbs = intval(htmlspecialchars($_POST["countlimbs"]));
+$superPowers = $_POST["super-powers"];
+$biography = htmlspecialchars($_POST["biography"]);
 if (!empty($_POST)) {
 	$bioreg = "/^\s*\w+[\w\s\.,-]*$/";
 	$reg = "/^\w+[\w\s-]*$/";
 	$mailreg = "/^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$/";
 	$list_sup = array('inv','walk','fly');
-	if (empty(!preg_match($reg,$name)) {
+	if (empty(!preg_match($reg,$username)) {
 		$errors[] = "Укажите Ваше имя! Это поле не должно быть пустым";
 	}
 	if (!preg_match($mailreg,$email)) {
@@ -40,13 +47,7 @@ if (isset($errors)) {
 	}
 	exit();
 }
-$username = htmlspecialchars($_POST["username"]);
-$email = htmlspecialchars($_POST["email"]);
-$year = intval(htmlspecialchars($_POST["year"]));
-$gender = htmlspecialchars($_POST["gender"]);
-$countlimbs = intval(htmlspecialchars($_POST["countlimbs"]));
-$superPowers = $_POST["super-powers"];
-$biography = htmlspecialchars($_POST["biography"]);
+	    
 if (!isset($_POST["agree"])) {
 	$agree = 0;
 } else {
