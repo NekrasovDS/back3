@@ -13,7 +13,7 @@ if (!empty($_POST)) {
 	$reg = "/^\w+[\w\s-]*$/";
 	$mailreg = "/^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$/";
 	$list_sup = array('inv','walk','fly');
-	if (!preg_match($reg,$name)) {
+	if (!preg_match($reg,$username)) {
 		$errors[] = "Укажите Ваше имя! Это поле не должно быть пустым";
 	}
 	if (!preg_match($mailreg,$email)) {
@@ -28,7 +28,7 @@ if (!empty($_POST)) {
 	if (!isset($_POST["countlimbs"])) {
 		$errors[] = "Выберите кол-во конечностей! Это поле не должно быть пустым";
 	}
-	foreach($superpowers as $checking){
+	foreach($superPowers as $checking){
 	if(array_search($checking,$list_sup)=== false){
 			print_r('Неверный формат суперсил');
 			exit();
