@@ -32,9 +32,6 @@ if (!empty($_POST)) {
 	if (!preg_match($bioreg,$biography)) {
 		$errors[] = "Расскажите что-нибудь о себе! Это поле не должно быть пустым";
 	}
-} else {
-	$errors[] = "Неверные данные для формы!";
-}
 
 if (isset($errors)) {
 	foreach ($errors as $value) {
