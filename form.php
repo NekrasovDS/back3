@@ -28,11 +28,6 @@ if (!empty($_POST)) {
 	if (!isset($_POST["countlimbs"])) {
 		$errors[] = "Выберите кол-во конечностей! Это поле не должно быть пустым";
 	}
-	foreach($superPowers as $checking){
-	if(array_search($checking,$list_sup)=== false){
-			print_r('Неверный формат суперсил');
-			exit();
-	}
 }
 	if (!preg_match($bioreg,$biography)) {
 		$errors[] = "Расскажите что-нибудь о себе! Это поле не должно быть пустым";
