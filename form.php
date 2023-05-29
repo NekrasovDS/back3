@@ -6,7 +6,7 @@ if (!empty($_POST)) {
 	$reg = "/^\w+[\w\s-]*$/";
 	$mailreg = "/^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$/";
 	$list_sup = array('inv','walk','fly');
-	if (empty(!preg_match($reg,$username)) {
+	if (empty(!preg_match($reg,$name)) {
 		$errors[] = "Укажите Ваше имя! Это поле не должно быть пустым";
 	}
 	if (!preg_match($mailreg,$email)) {
