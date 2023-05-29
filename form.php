@@ -1,13 +1,5 @@
 <?php
 
-header('Content-Type: text/html; charset=UTF-8');
-$username = htmlspecialchars($_POST["username"]);
-$email = htmlspecialchars($_POST["email"]);
-$year = intval(htmlspecialchars($_POST["year"]));
-$gender = htmlspecialchars($_POST["gender"]);
-$countlimbs = intval(htmlspecialchars($_POST["countlimbs"]));
-$superPowers = $_POST["super-powers"];
-$biography = htmlspecialchars($_POST["biography"]);
 if (!empty($_POST)) {
 	$bioreg = "/^\s*\w+[\w\s\.,-]*$/";
 	$reg = "/^\w+[\w\s-]*$/";
@@ -45,6 +37,14 @@ if (!isset($_POST["agree"])) {
 } else {
 	$agree = 1;
 }
+header('Content-Type: text/html; charset=UTF-8');
+$username = htmlspecialchars($_POST["username"]);
+$email = htmlspecialchars($_POST["email"]);
+$year = intval(htmlspecialchars($_POST["year"]));
+$gender = htmlspecialchars($_POST["gender"]);
+$countlimbs = intval(htmlspecialchars($_POST["countlimbs"]));
+$superPowers = $_POST["super-powers"];
+$biography = htmlspecialchars($_POST["biography"]);
 
 $serverName = 'localhost';
 $user = "u52806";
